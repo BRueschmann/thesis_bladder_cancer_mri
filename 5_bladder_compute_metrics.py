@@ -108,9 +108,9 @@ for i, case in enumerate(tqdm(case_ids, desc="Cases")):
         print(f"[{case}] PR hdr : {hdr(pred_img)}")
 
     if hdr(gt_img) != hdr(pred_img):
-        if args.show_header_diffs:
-            reason = hdr_mismatch(pred_img, gt_img)
-            hdr_issues.append((case, reason))
+        # if args.show_header_diffs:
+        #    reason = hdr_mismatch(pred_img, gt_img)
+        #    hdr_issues.append((case, reason))
         pred_img  = resample_to_ref(pred_img, gt_img)
         cnt_resample += 1
         assert hdr(gt_img) == hdr(pred_img), \
